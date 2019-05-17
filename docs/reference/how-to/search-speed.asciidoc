@@ -422,6 +422,11 @@ UI available in all X-Pack licenses, including the free X-Pack Basic license.
 
 Some caveats to the Profile API are that:
 
- - the Profile API as a debugging tool adds significant overhead to search execution and can also have a very verbose output
- - given the added overhead, the resulting took times are not reliable indicators of actual took time, but can be used comparatively between clauses for relative timing differences
- - the Profile API is best for exploring possible reasons behind the most costly clauses of a query but isn't intended for accurately measuring absolute timings of each clause 
+ - the Profile API as a debugging tool adds significant overhead to search 
+ execution and can also have a very verbose output
+ - given the added overhead, the resulting took times are not reliable
+ indicators of actual took time, but can be used comparatively between clauses
+ for relative timing differences
+ - the Profile API is best for exploring possible reasons behind the most
+ costly clauses of a query but isn't intended for accurately measuring absolute
+ timings of each clause 
