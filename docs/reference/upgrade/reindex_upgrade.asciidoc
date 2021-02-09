@@ -126,14 +126,6 @@ resolve any backward compatibility issues yourself.
 {es} does not support forward compatibility across major versions.
 For example, you cannot reindex from a 7.x cluster into a 6.x cluster.
 
-[NOTE]
-=============================================
-Reindexing from remote clusters does not support
-<<docs-reindex-manual-slice, manual>> or
-<<docs-reindex-automatic-slice, automatic slicing>>.
-
-=============================================
-
 ifdef::include-xpack[]
 If you use {ml-features} and you're migrating indices from a 6.5 or earlier
 cluster, the job and {dfeed} configuration information are not stored in an
@@ -146,6 +138,14 @@ different {ml} indices that are reindexed at slightly different times. Use the
 endif::include-xpack[]
 
 =============================================
+
+[NOTE]
+=============================================
+Reindexing from remote clusters does not support
+<<docs-reindex-manual-slice, manual>> or
+<<docs-reindex-automatic-slice, automatic slicing>>.
+=============================================
+
 
 To migrate your indices:
 
