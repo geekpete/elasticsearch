@@ -20,6 +20,14 @@ You have two options for reindexing old indices:
 * Create a new {version} cluster and <<reindex-upgrade-remote, Reindex from remote>>.
 This enables you to reindex indices that reside on clusters running any version of {es}.
 
+[NOTE]
+=============================================
+Reindexing from remote clusters does not support
+<<docs-reindex-manual-slice, manual>> or
+<<docs-reindex-automatic-slice, automatic slicing>>.
+=============================================
+
+
 .Upgrading time-based indices
 *******************************************
 
@@ -118,6 +126,14 @@ resolve any backward compatibility issues yourself.
 {es} does not support forward compatibility across major versions.
 For example, you cannot reindex from a 7.x cluster into a 6.x cluster.
 
+[NOTE]
+=============================================
+Reindexing from remote clusters does not support
+<<docs-reindex-manual-slice, manual>> or
+<<docs-reindex-automatic-slice, automatic slicing>>.
+
+=============================================
+
 ifdef::include-xpack[]
 If you use {ml-features} and you're migrating indices from a 6.5 or earlier
 cluster, the job and {dfeed} configuration information are not stored in an
@@ -125,7 +141,7 @@ index. You must recreate your {ml} jobs in the new cluster. If you are migrating
 from a 6.6 or later cluster, it is a good idea to temporarily halt the tasks
 associated with your {ml} jobs and {dfeeds} to prevent inconsistencies between
 different {ml} indices that are reindexed at slightly different times. Use the
-<<ml-set-upgrade-mode,set upgrade mode API>> or 
+<<ml-set-upgrade-mode,set upgrade mode API>> or
 {ml-docs}/stopping-ml.html[stop all {dfeeds} and close all {ml} jobs].
 endif::include-xpack[]
 
